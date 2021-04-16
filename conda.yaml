@@ -1,0 +1,21 @@
+name: multistep
+channels:
+  - defaults
+  - anaconda
+  - conda-forge
+dependencies:
+  - python=3.6
+  - requests
+  - click
+  - pip
+  - pip:
+    - googledrivedownloader
+    - tensorflow
+    - keras
+    - keras-tuner
+    - tensorflow-datasets
+    - matplotlib
+    - mlflow
+    - split_folders
+    - tensorflow-serving-api
+    - litereval

@@ -1,0 +1,35 @@
+name: multistep_example
+
+conda_env: conda.yaml
+
+entry_points:
+  load_raw_data:
+    command: "python load_raw_data.py"
+
+  etl_data:
+    parameters:
+      aertist_dir: path
+    command: "python etl_data.py --aertist_dir {aertist_dir}"
+
+  train_keras:
+    parameters:
+      train_dir: path
+      validation_dir: path
+      hidden_units: {type: int, default: 20}
+    command: "python train_keras.py --train-dir {train_dir} --validation-dir {validation_dir} --hidden-units {hidden_units}"
+
+  model_inference:
+    parameters:
+      model_dir: path
+      label_dir: path
+    command: "python model_load.py --model-dir {model_dir} --label-dir {label_dir} "
+
+
+  main:
+    parameters:
+      als_max_iter: {type: int, default: 10}
+      keras_hidden_units: {type: int, default: 20}
+      max_row_limit: {type: int, default: 100000}
+    command: "python main.py --als-max-iter {als_max_iter} --keras-hidden-units {keras_hidden_units}
+                             --max-row-limit {max_row_limit}"
+
