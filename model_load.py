@@ -21,10 +21,13 @@ def load_model(model_dir):
     # pre-trained on ImageNet and provided by Keras, but you can
     # substitute in your own networks just as easily)
     global model
+    print("load_model model_dir0",model_dir )
+    model_dir=model_dir.replace('\\','/')
+    print("load_model model_dir1",model_dir )
     model_dir=r'file:///' + model_dir
     print("load_model model_dir",model_dir )
-    model =mlflow.keras.load_model(model_dir)
-#    model =mlflow.keras.load_model(r'Users\AmitCahanovich\Documents\personal\versatile\mlflow\examples\multistep_workflow\mlruns\0\8fdf937706944283ae4a9984fbcd8792\artifacts\keras-model')
+    model =mlflow.keras.load_model(model_dir[:-1])
+#    model =mlflow.keras.load_model(r'file:///C:/Users/AmitCahanovich/Documents/personal/versatile/mlflow/examples/multistep_workflow/mlruns/0/982847f8c6a74029bd8f2a718f6ec463/artifacts/keras-model')
 #    model =mlflow.keras.load_model('../mlflow/examples/multistep_workflow/mlruns/0/0ccdde176f1447a29d2be2f4dfcec583/artifacts/keras-model')
 def prepare_image(image, target):
     # if the image mode is not RGB, convert it
@@ -80,7 +83,7 @@ def model_inference(model_dir, label_dir):
     load_model(model_dir )  
     print ('label_dir:%s' % label_dir)
     global label_json_dict
-    with open(label_dir, 'r') as file:
+    with open(label_dir[1:-1], 'r') as file:
          labels=file.read()
     label_json_dict=ast.literal_eval(labels[0:-1])
     print(label_json_dict)
