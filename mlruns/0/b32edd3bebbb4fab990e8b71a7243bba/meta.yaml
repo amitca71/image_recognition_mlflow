@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/AmitCahanovich/Documents/personal/versatile/mlflow/examples/multistep_workflow/mlruns/0/b32edd3bebbb4fab990e8b71a7243bba/artifacts
+end_time: 1618571476365
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: b32edd3bebbb4fab990e8b71a7243bba
+run_uuid: b32edd3bebbb4fab990e8b71a7243bba
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1618571472312
+status: 3
+tags: []
+user_id: AmitCahanovich
