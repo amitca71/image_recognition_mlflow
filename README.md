@@ -1,9 +1,13 @@
 prerequisite: installed mlflow  version 1.15.0 (pip install mlflow)
 
-executing the all flow: mlflow run .
-see historical executions: mlflow ui (open browser on: http://127.0.0.1:5000)
+executing the all flow: 
+            mlflow run .
 
-model steps
+
+in order to see historical executions: 
+           mlflow ui (open browser on: http://127.0.0.1:5000)
+
+pipeline steps
 load_raw_data: 
          - download file from google driver and unzip
 etl_data: 
@@ -14,7 +18,7 @@ train_keras:
 		- log class labeling
 		- log model
 		
-json inference: 
+model_inference: 
 		- deploy the model (localhost)
 		
 sample client usage: curl -X POST -F image=@./artist_dataset/frida_kahlo/Without-Hope-1945-Frida-Kahlo.jpg 'http://localhost:5000/predict'
