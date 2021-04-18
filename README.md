@@ -1,4 +1,4 @@
-prerequisite: installed mlflow (pip install mlflow)
+prerequisite: installed mlflow  version 1.15.0 (pip install mlflow)
 
 executing the all flow: mlflow run .
 see historical executions: mlflow ui (open browser on: http://127.0.0.1:5000)
