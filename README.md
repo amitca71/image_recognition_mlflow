@@ -1,7 +1,9 @@
 prerequisite: installed mlflow (pip install mlflow)
 
 executing the all flow: mlflow run .
+see historical executions: mlflow ui (open browser on: http://127.0.0.1:5000)
 
+model steps
 load_raw_data: 
          - download file from google driver and unzip
 etl_data: 
@@ -18,6 +20,7 @@ json inference:
 sample client usage: curl -X POST -F image=@./artist_dataset/frida_kahlo/Without-Hope-1945-Frida-Kahlo.jpg 'http://localhost:5000/predict'
 
 		
-
+note: model training uses very small hard coded iterations related parameter, in order to be executed fast.
+on real life, these parameters should be retrieved as input 
 
 
