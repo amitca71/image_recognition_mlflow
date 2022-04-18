@@ -1,16 +1,16 @@
-# prerequisite: installed mlflow  version 1.15.0 (pip install mlflow).     
+### prerequisite: installed mlflow  version 1.15.0 (pip install mlflow).     
 
-# create experiment:   
+### create experiment:   
              mlflow experiments create --experiment-name 0. 
-# executing the all flow:   
+### executing the all flow:   
             mlflow run .
 
    
-# in order to see historical executions: 
+### in order to see historical executions: 
            mlflow ui (open browser on: http://127.0.0.1:5000).  
 	   (in order to see enclosed historical executions, need to change the dictionary name mlruns/1 to mlruns/0, as the experiments originaly executed as experiment 0).  
 
-# pipeline steps:   
+### pipeline steps:   
 load_raw_data:   
          - download file from google driver and unzip. 
 etl_data:   
