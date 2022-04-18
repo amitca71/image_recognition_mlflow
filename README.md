@@ -11,17 +11,17 @@
 	   (in order to see enclosed historical executions, need to change the dictionary name mlruns/1 to mlruns/0, as the experiments originaly executed as experiment 0).  
 
 ### pipeline steps:   
-load_raw_data:   
+#### load_raw_data:   
          - download file from google driver and unzip. 
-etl_data:   
-         - split to train and validation dir. 
-train_keras: 
+#### etl_data:   
+         - split to train and validation dir.   
+#### train_keras: 
 		- data augmentation. 
-		- hyper parameter tuning   
+		- hyper parameter tuning.     
 		- log class labeling.  
 		- log model. 
 		
-model_inference: 
+#### model_inference:   
 		- deploy the model (localhost). 
 		
 sample client usage: curl -X POST -F image=@./artist_dataset/frida_kahlo/Without-Hope-1945-Frida-Kahlo.jpg 'http://localhost:5000/predict'. 
